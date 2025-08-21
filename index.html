@@ -15,15 +15,13 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
+        } 
         body {
             background: linear-gradient(135deg, #1a2a6c 0%, #b21f1f 50%, #fdbb2d 100%);
             color: #333;
             min-height: 100vh;
             padding: 20px;
         }
-        
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -32,7 +30,6 @@
             padding: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
-        
         header {
             display: flex;
             justify-content: space-between;
@@ -43,18 +40,15 @@
             color: white;
             margin-bottom: 20px;
         }
-        
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
         }
-        
         .auth-buttons {
             display: flex;
             gap: 5px;
             align-items: center;
         }
-        
         button {
             padding: 15px 25px;
             border: none;
@@ -66,22 +60,18 @@
             transition: transform 0.3s, box-shadow 0.3s;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
-        
         button:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         }
-        
         button.primary {
             background: #1a2a6c;
             color: white;
         }
-        
         button:disabled {
             opacity: 0.7;
             cursor: not-allowed;
         }
-        
         .admin-panel {
             background-color: rgba(255, 255, 255, 0.9);
             padding: 20px;
@@ -90,14 +80,35 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             display: none;
         }
-        
+        .admin-tabs {
+            display: flex;
+            border-bottom: 2px solid #ddd;
+            margin-bottom: 20px;
+        }
+        .admin-tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background: #f5f5f5;
+            border-radius: 5px 5px 0 0;
+            margin-right: 5px;
+            transition: background 0.3s;
+        }
+        .admin-tab.active {
+            background: #1a2a6c;
+            color: white;
+        }
+        .admin-tab-content {
+            display: none;
+        }
+        .admin-tab-content.active {
+            display: block;
+        }
         .videos-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 25px;
             margin-top: 20px;
         }
-        
         .video-card {
             background: white;
             border-radius: 15px;
@@ -106,35 +117,29 @@
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
         }
-        
         .video-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.18);
         }
-        
         .video-thumbnail {
             width: 100%;
             height: 200px;
             object-fit: cover;
             border-bottom: 3px solid #1a2a6c;
         }
-        
         .video-info {
             padding: 20px;
         }
-        
         .video-title {
             font-size: 1.3rem;
             margin-bottom: 10px;
             color: #1a2a6c;
         }
-        
         .video-description {
             color: #666;
             font-size: 1rem;
             line-height: 1.5;
         }
-        
         .video-meta {
             display: flex;
             justify-content: space-between;
@@ -142,14 +147,12 @@
             font-size: 0.9rem;
             color: #888;
         }
-        
         .video-actions {
             display: flex;
             justify-content: space-between;
             padding: 15px 20px;
             border-top: 1px solid #eee;
         }
-        
         .action-btn {
             background: none;
             border: none;
@@ -158,11 +161,18 @@
             font-size: 1.1rem;
             transition: color 0.3s;
         }
-        
         .action-btn:hover {
             color: #b21f1f;
         }
-        
+        .action-btn.active {
+            color: #b21f1f;
+        }
+        .action-btn.liked {
+            color: #28a745;
+        }
+        .action-btn.disliked {
+            color: #dc3545;
+        }
         .modal {
             display: none;
             position: fixed;
@@ -175,7 +185,6 @@
             justify-content: center;
             align-items: center;
         }
-        
         .modal-content {
             background-color: white;
             padding: 30px;
@@ -185,7 +194,6 @@
             position: relative;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
-        
         .close-modal {
             position: absolute;
             top: 15px;
@@ -195,11 +203,9 @@
             color: #1a2a6c;
             transition: color 0.3s;
         }
-        
         .close-modal:hover {
             color: #ff6b6b;
         }
-        
         .video-container {
             position: relative;
             width: 100%;
@@ -209,7 +215,6 @@
             border-radius: 10px;
             overflow: hidden;
         }
-        
         .video-container iframe {
             position: absolute;
             top: 0;
@@ -219,13 +224,11 @@
             border: none;
             border-radius: 10px;
         }
-        
         .video-container video {
             width: 100%;
             border-radius: 10px;
             max-height: 70vh;
         }
-        
         .auth-form {
             background-color: rgba(255, 255, 255, 0.95);
             padding: 30px;
@@ -235,24 +238,20 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
             display: none;
         }
-        
         .auth-form h2 {
             margin-bottom: 25px;
             text-align: center;
             color: #1a2a6c;
         }
-        
         .form-group {
             margin-bottom: 20px;
         }
-        
         .form-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: bold;
             color: #1a2a6c;
         }
-        
         .form-group input {
             width: 100%;
             padding: 15px;
@@ -261,38 +260,25 @@
             font-size: 1rem;
             transition: border-color 0.3s;
         }
-        
         .form-group input:focus {
             border-color: #1a2a6c;
             outline: none;
         }
-        
         .error-message {
             color: #ff6b6b;
             margin-top: 15px;
             text-align: center;
             font-weight: bold;
         }
-        
         .success-message {
             color: #28a745;
             margin-top: 15px;
             text-align: center;
             font-weight: bold;
         }
-        
         .hidden {
             display: none;
         }
-        
-        .welcome-message {
-            text-align: center;
-            color: white;
-            margin: 30px 0;
-            font-size: 2.5rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-        
         .user-email {
             color: #1a2a6c;
             margin-right: 15px;
@@ -301,7 +287,6 @@
             padding: 8px 15px;
             border-radius: 20px;
         }
-        
         .instructions {
             background-color: rgba(255, 255, 255, 0.9);
             padding: 20px;
@@ -309,42 +294,35 @@
             margin-top: 30px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
-        
         .instructions h3 {
             color: #1a2a6c;
             margin-bottom: 15px;
         }
-        
         .instructions ol {
             margin-left: 20px;
             line-height: 1.6;
         }
-        
         .instructions li {
             margin-bottom: 10px;
         }
-        
         .loading {
             text-align: center;
             color: white;
             font-size: 1.5rem;
             margin: 30px 0;
         }
-        
         .upload-section {
             background: white;
             padding: 20px;
             border-radius: 10px;
             margin-bottom: 20px;
         }
-        
         .service-options {
             display: flex;
             gap: 15px;
             margin: 15px 0;
             flex-wrap: wrap;
         }
-        
         .service-option {
             flex: 1;
             min-width: 200px;
@@ -354,23 +332,19 @@
             cursor: pointer;
             transition: all 0.3s;
         }
-        
         .service-option:hover {
             border-color: #1a2a6c;
             background: #f0f4ff;
         }
-        
         .service-option.selected {
             border-color: #1a2a6c;
             background: #e0e8ff;
         }
-        
         .service-logo {
             font-size: 2rem;
             margin-bottom: 10px;
             color: #1a2a6c;
         }
-        
         .service-instructions {
             background: #f9f9f9;
             padding: 15px;
@@ -378,18 +352,15 @@
             margin-top: 15px;
             display: none;
         }
-        
         .service-instructions.active {
             display: block;
         }
-        
         .test-area {
             background: #e8f4ff;
             padding: 15px;
             border-radius: 10px;
             margin-top: 15px;
         }
-        
         .test-button {
             background: #1a2a6c;
             color: white;
@@ -399,66 +370,159 @@
             cursor: pointer;
             margin-top: 10px;
         }
-        
         .url-tester {
             display: flex;
             gap: 10px;
             margin-top: 10px;
         }
-        
         .url-tester input {
             flex: 1;
             padding: 10px;
             border: 2px solid #ddd;
             border-radius: 5px;
         }
-        
         .test-result {
             margin-top: 10px;
             padding: 10px;
             border-radius: 5px;
             display: none;
         }
-        
         .success {
             background: #d4edda;
             color: #155724;
             border: 1px solid #c3e6cb;
         }
-        
         .error {
             background: #f8d7da;
             color: #721c24;
             border: 1px solid #f5c6cb;
         }
-        
         .url-help {
             font-size: 0.9rem;
             color: #666;
             margin-top: 5px;
         }
-        
+        .comments-section {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+        .comments-section h3 {
+            margin-bottom: 15px;
+            color: #1a2a6c;
+        }
+        .comment-form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .comment-input {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+        }
+        .comments-list {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .comment {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .comment:last-child {
+            border-bottom: none;
+        }
+        .comment-author {
+            font-weight: bold;
+            color: #1a2a6c;
+        }
+        .comment-date {
+            font-size: 0.8rem;
+            color: #888;
+        }
+        .comment-text {
+            margin-top: 5px;
+        }
+        .admin-videos-list {
+            margin-top: 20px;
+        }
+        .admin-video-item {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .admin-video-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .admin-video-actions {
+            display: flex;
+            gap: 10px;
+        }
+        .admin-action-btn {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .edit-btn {
+            background: #ffc107;
+            color: #000;
+        }
+        .delete-btn {
+            background: #dc3545;
+            color: white;
+        }
+        .edit-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1001;
+            justify-content: center;
+            align-items: center;
+        }
+        .edit-modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+        }
         @media (max-width: 768px) {
             .videos-container {
                 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             }
-            
             header {
                 flex-direction: column;
                 gap: 15px;
             }
-            
             .auth-buttons {
                 width: 100%;
                 justify-content: center;
             }
-            
             .service-options {
                 flex-direction: column;
             }
-            
             .url-tester {
                 flex-direction: column;
+            }
+            .admin-tabs {
+                flex-wrap: wrap;
+            }
+            .admin-tab {
+                margin-bottom: 5px;
             }
         }
     </style>
@@ -475,104 +539,144 @@
             </div>
         </header>
         <div id="admin-panel" class="admin-panel">
-            <h2><i class="fas fa-crown"></i> Панель добавления видео</h2>
-            <p>Используйте бесплатные облачные хранилища для загрузки видео</p>
+            <h2><i class="fas fa-crown"></i> Панель администратора</h2>
             
-            <div class="upload-section">
-                <h3>Шаг 1: Выберите сервис для загрузки</h3>
-                <div class="service-options">
-                    <div class="service-option selected" data-service="google">
-                        <div class="service-logo"><i class="fab fa-google-drive"></i></div>
-                        <h4>Google Drive</h4>
-                        <p>Бесплатно, 15 ГБ места</p>
+            <div class="admin-tabs">
+                <div class="admin-tab active" data-tab="upload">Добавить видео</div>
+                <div class="admin-tab" data-tab="manage">Управление видео</div>
+            </div>
+            
+            <div id="upload-tab" class="admin-tab-content active">
+                <p>Используйте бесплатные облачные хранилища для загрузки видео</p>
+                <div class="upload-section">
+                    <h3>Шаг 1: Выберите сервис для загрузки</h3>
+                    <div class="service-options">
+                        <div class="service-option selected" data-service="google">
+                            <div class="service-logo"><i class="fab fa-google-drive"></i></div>
+                            <h4>Google Drive</h4>
+                            <p>Бесплатно, 15 ГБ места</p>
+                        </div>
+                        <div class="service-option" data-service="yandex">
+                            <div class="service-logo"><i class="fab fa-yandex"></i></div>
+                            <h4>Яндекс.Диск</h4>
+                            <p>Бесплатно, 10 ГБ места</p>
+                        </div>
+                        <div class="service-option" data-service="dropbox">
+                            <div class="service-logo"><i class="fab fa-dropbox"></i></div>
+                            <h4>Dropbox</h4>
+                            <p>Бесплатно, 2 ГБ места</p>
+                        </div>
+                        <div class="service-option" data-service="mailru">
+                            <div class="service-logo"><i class="fas fa-cloud"></i></div>
+                            <h4>Mail.ru Cloud</h4>
+                            <p>Бесплатно, 8 ГБ места</p>
+                        </div>
                     </div>
-                    <div class="service-option" data-service="yandex">
-                        <div class="service-logo"><i class="fab fa-yandex"></i></div>
-                        <h4>Яндекс.Диск</h4>
-                        <p>Бесплатно, 10 ГБ места</p>
+                    <div id="google-instructions" class="service-instructions active">
+                        <h4><i class="fab fa-google-drive"></i> Инструкция для Google Drive:</h4>
+                        <ol>
+                            <li>Загрузите видео на Google Drive</li>
+                            <li>Правой кнопкой мыши → "Предоставить доступ" → "Доступ по ссылке"</li>
+                            <li>Скопируйте ID файла из ссылки (после /d/ и до /view)</li>
+                            <li>Используйте ссылку: <code>https://drive.google.com/file/d/ВАШ_ID/preview</code></li>
+                        </ol>
                     </div>
-                    <div class="service-option" data-service="dropbox">
-                        <div class="service-logo"><i class="fab fa-dropbox"></i></div>
-                        <h4>Dropbox</h4>
-                        <p>Бесплатно, 2 ГБ места</p>
+                    <div id="yandex-instructions" class="service-instructions">
+                        <h4><i class="fab fa-yandex"></i> Инструкция для Яндекс.Диск:</h4>
+                        <ol>
+                            <li>Загрузите видео на Яндекс.Диск</li>
+                            <li>Правой кнопкой мыши → "Поделиться" → "Открыть доступ"</li>
+                            <li>Получите прямую ссылку через сервис <a href="https://yadi.sk/direct" target="_blank">yadi.sk/direct</a></li>
+                            <li>Используйте полученную прямую ссылку</li>
+                        </ol>
                     </div>
-                    <div class="service-option" data-service="mailru">
-                        <div class="service-logo"><i class="fas fa-cloud"></i></div>
-                        <h4>Mail.ru Cloud</h4>
-                        <p>Бесплатно, 8 ГБ места</p>
+                    <div id="dropbox-instructions" class="service-instructions">
+                        <h4><i class="fab fa-dropbox"></i> Инструкция для Dropbox:</h4>
+                        <ol>
+                            <li>Загрузите видео на Dropbox</li>
+                            <li>Правой кнопкой мыши → "Поделиться" → "Создать ссылку"</li>
+                            <li>Измените в ссылке "www.dropbox.com" на "dl.dropboxusercontent.com"</li>
+                            <li>Уберите параметры из ссылки, оставив только основную часть</li>
+                        </ol>
+                    </div>
+                    <div id="mailru-instructions" class="service-instructions">
+                        <h4><i class="fas fa-cloud"></i> Инструкция для Mail.ru Cloud:</h4>
+                        <ol>
+                            <li>Загрузите видео в Облако Mail.ru</li>
+                            <li>Правой кнопкой мыши → "Поделиться" → "Скопировать публичную ссылку"</li>
+                            <li>Используйте полученную ссылку</li>
+                        </ol>
+                    </div>
+                    <div class="test-area">
+                        <h4>Проверьте вашу ссылку:</h4>
+                        <div class="url-tester">
+                            <input type="text" id="test-url" placeholder="Вставьте вашу ссылку для проверки">
+                            <button class="test-button" onclick="testVideoUrl()">Проверить</button>
+                        </div>
+                        <div id="test-result" class="test-result"></div>
+                    </div>
+                    <h3>Шаг 2: Добавьте информацию о видео</h3>
+                    <form id="upload-form">
+                        <div class="form-group">
+                            <label for="video-title">Название видео</label>
+                            <input type="text" id="video-title" required placeholder="Введите название">
+                        </div>
+                        <div class="form-group">
+                            <label for="video-description">Описание видео</label>
+                            <input type="text" id="video-description" required placeholder="Введите описание">
+                        </div>
+                        <div class="form-group">
+                            <label for="video-url">Ссылка на видео</label>
+                            <input type="url" id="video-url" required placeholder="https://..." oninput="validateUrl(this)">
+                            <div class="url-help">Пример: https://drive.google.com/file/d/ID/preview</div>
+                            <div id="url-error" class="error-message" style="display: none;"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="thumbnail-url">Ссылка на превью (опционально)</label>
+                            <input type="url" id="thumbnail-url" placeholder="https://...">
+                            <div class="url-help">Можно использовать ImgBB, ImgUR или другие хостинги изображений</div>
+                        </div>
+                        <button type="submit" class="primary" id="upload-button"><i class="fas fa-upload"></i> Добавить видео</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div id="manage-tab" class="admin-tab-content">
+                <h3>Управление видео</h3>
+                <div id="admin-videos-list" class="admin-videos-list">
+                    <div class="loading">
+                        <i class="fas fa-spinner fa-spin"></i> Загрузка видео...
                     </div>
                 </div>
-                
-                <div id="google-instructions" class="service-instructions active">
-                    <h4><i class="fab fa-google-drive"></i> Инструкция для Google Drive:</h4>
-                    <ol>
-                        <li>Загрузите видео на Google Drive</li>
-                        <li>Правой кнопкой мыши → "Предоставить доступ" → "Доступ по ссылке"</li>
-                        <li>Скопируйте ID файла из ссылки (после /d/ и до /view)</li>
-                        <li>Используйте ссылку: <code>https://drive.google.com/file/d/ВАШ_ID/preview</code></li>
-                    </ol>
-                </div>
-                
-                <div id="yandex-instructions" class="service-instructions">
-                    <h4><i class="fab fa-yandex"></i> Инструкция для Яндекс.Диск:</h4>
-                    <ol>
-                        <li>Загрузите видео на Яндекс.Диск</li>
-                        <li>Правой кнопкой мыши → "Поделиться" → "Открыть доступ"</li>
-                        <li>Получите прямую ссылку через сервис <a href="https://yadi.sk/direct" target="_blank">yadi.sk/direct</a></li>
-                        <li>Используйте полученную прямую ссылку</li>
-                    </ol>
-                </div>
-                
-                <div id="dropbox-instructions" class="service-instructions">
-                    <h4><i class="fab fa-dropbox"></i> Инструкция для Dropbox:</h4>
-                    <ol>
-                        <li>Загрузите видео на Dropbox</li>
-                        <li>Правой кнопкой мыши → "Поделиться" → "Создать ссылку"</li>
-                        <li>Измените в ссылке "www.dropbox.com" на "dl.dropboxusercontent.com"</li>
-                        <li>Уберите параметры из ссылки, оставив только основную часть</li>
-                    </ol>
-                </div>
-                
-                <div id="mailru-instructions" class="service-instructions">
-                    <h4><i class="fas fa-cloud"></i> Инструкция для Mail.ru Cloud:</h4>
-                    <ol>
-                        <li>Загрузите видео в Облако Mail.ru</li>
-                        <li>Правой кнопкой мыши → "Поделиться" → "Скопировать публичную ссылку"</li>
-                        <li>Используйте полученную ссылку</li>
-                    </ol>
-                </div>
-                
-                <div class="test-area">
-                    <h4>Проверьте вашу ссылку:</h4>
-                    <div class="url-tester">
-                        <input type="text" id="test-url" placeholder="Вставьте вашу ссылку для проверки">
-                        <button class="test-button" onclick="testVideoUrl()">Проверить</button>
-                    </div>
-                    <div id="test-result" class="test-result"></div>
-                </div>
-                
-                <h3>Шаг 2: Добавьте информацию о видео</h3>
-                <form id="upload-form">
+            </div>
+        </div>
+        
+        <div id="edit-modal" class="edit-modal">
+            <div class="edit-modal-content">
+                <span class="close-modal" onclick="closeEditModal()">&times;</span>
+                <h3>Редактирование видео</h3>
+                <form id="edit-video-form">
+                    <input type="hidden" id="edit-video-id">
                     <div class="form-group">
-                        <label for="video-title">Название видео</label>
-                        <input type="text" id="video-title" required placeholder="Введите название">
+                        <label for="edit-video-title">Название видео</label>
+                        <input type="text" id="edit-video-title" required placeholder="Введите название">
                     </div>
                     <div class="form-group">
-                        <label for="video-description">Описание видео</label>
-                        <input type="text" id="video-description" required placeholder="Введите описание">
+                        <label for="edit-video-description">Описание видео</label>
+                        <input type="text" id="edit-video-description" required placeholder="Введите описание">
                     </div>
                     <div class="form-group">
-                        <label for="video-url">Ссылка на видео</label>
-                        <input type="url" id="video-url" required placeholder="https://..." oninput="validateUrl(this)">
+                        <label for="edit-video-url">Ссылка на видео</label>
+                        <input type="url" id="edit-video-url" required placeholder="https://..." oninput="validateEditUrl(this)">
                         <div class="url-help">Пример: https://drive.google.com/file/d/ID/preview</div>
-                        <div id="url-error" class="error-message" style="display: none;"></div>
+                        <div id="edit-url-error" class="error-message" style="display: none;"></div>
                     </div>
                     <div class="form-group">
-                        <label for="thumbnail-url">Ссылка на превью (опционально)</label>
-                        <input type="url" id="thumbnail-url" placeholder="https://...">
+                        <label for="edit-thumbnail-url">Ссылка на превью (опционально)</label>
+                        <input type="url" id="edit-thumbnail-url" placeholder="https://...">
                         <div class="url-help">Можно использовать ImgBB, ImgUR или другие хостинги изображений</div>
                     </div>
-                    <button type="submit" class="primary" id="upload-button"><i class="fas fa-upload"></i> Добавить видео</button>
+                    <button type="submit" class="primary" id="edit-button"><i class="fas fa-save"></i> Сохранить изменения</button>
                 </form>
             </div>
         </div>
@@ -590,7 +694,6 @@
             <button id="submit-login" class="primary">Войти</button>
             <p class="error-message" id="login-error"></p>
         </div>
-        
         <div id="register-form" class="auth-form">
             <h2><i class="fas fa-user-plus"></i> Регистрация</h2>
             <div class="form-group">
@@ -604,29 +707,15 @@
             <button id="submit-register" class="primary">Зарегистрироваться</button>
             <p class="error-message" id="register-error"></p>
         </div>
-        
         <div id="videos-container" class="videos-container">
             <div class="loading">
                 <i class="fas fa-spinner fa-spin"></i> Загрузка...
             </div>
         </div>
-        
-        <div class="instructions">
-            <h3>Поддерживаемые облачные хранилища:</h3>
-            <ol>
-                <li><strong>Google Drive</strong> - 15 ГБ бесплатно, лучшая совместимость</li>
-                <li><strong>Яндекс.Диск</strong> - 10 ГБ бесплатно, хорошая скорость в СНГ</li>
-                <li><strong>Dropbox</strong> - 2 ГБ бесплатно, надежное хранение</li>
-                <li><strong>Mail.ru Cloud</strong> - 8 ГБ бесплатно, удобно для российских пользователей</li>
-            </ol>
-            <p><strong>Все видео синхронизируются между всеми пользователями через Firebase!</strong></p>
-        </div>
-        
         <div id="video-modal" class="modal">
             <div class="modal-content">
                 <span class="close-modal">&times;</span>
                 <div class="video-container" id="video-player-container">
-                    <!-- Видео будет вставлено сюда -->
                 </div>
                 <div class="video-info">
                     <h3 id="modal-video-title"></h3>
@@ -635,28 +724,40 @@
                         <span><i class="fas fa-eye"></i> <span id="modal-views">0</span> просмотров</span>
                         <span><i class="fas fa-calendar"></i> <span id="modal-date">дата</span></span>
                     </div>
+                    <div class="video-actions">
+                        <button class="action-btn like-btn" onclick="handleReaction('like')"><i class="fas fa-thumbs-up"></i> <span id="like-count">0</span></button>
+                        <button class="action-btn dislike-btn" onclick="handleReaction('dislike')"><i class="fas fa-thumbs-down"></i> <span id="dislike-count">0</span></button>
+                    </div>
+                </div>
+                
+                <div class="comments-section">
+                    <h3>Комментарии</h3>
+                    <div class="comment-form">
+                        <input type="text" id="comment-input" class="comment-input" placeholder="Оставьте комментарий...">
+                        <button class="primary" onclick="addComment()">Отправить</button>
+                    </div>
+                    <div id="comments-list" class="comments-list">
+                        <!-- Комментарии будут загружаться здесь -->
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        // Firebase configuration - ЗАМЕНИТЕ НА ВАШУ КОНФИГУРАЦИЮ
         const firebaseConfig = {
-  apiKey: "AIzaSyAsckHR3Z8AIc2UEHCk6KiUU4XGKj5Odfg",
-  authDomain: "videosite-98254.firebaseapp.com",
-  projectId: "videosite-98254",
-  storageBucket: "videosite-98254.firebasestorage.app",
-  messagingSenderId: "632884459067",
-  appId: "1:632884459067:web:3df66d8651d09507824e1e"
-};
+            apiKey: "AIzaSyAsckHR3Z8AIc2UEHCk6KiUU4XGKj5Odfg",
+            authDomain: "videosite-98254.firebaseapp.com",
+            projectId: "videosite-98254",
+            storageBucket: "videosite-98254.firebasestorage.app",
+            messagingSenderId: "632884459067",
+            appId: "1:632884459067:web:3df66d8651d09507824e1e"
+        };
         
-        // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         const auth = firebase.auth();
         const db = firebase.firestore();
         
-        // DOM elements
         const loginBtn = document.getElementById('login-btn');
         const registerBtn = document.getElementById('register-btn');
         const logoutBtn = document.getElementById('logout-btn');
@@ -681,47 +782,80 @@
         const urlError = document.getElementById('url-error');
         const uploadButton = document.getElementById('upload-button');
         const serviceOptions = document.querySelectorAll('.service-option');
+        const adminTabs = document.querySelectorAll('.admin-tab');
+        const adminTabContents = document.querySelectorAll('.admin-tab-content');
+        const adminVideosList = document.getElementById('admin-videos-list');
+        const editModal = document.getElementById('edit-modal');
+        const editForm = document.getElementById('edit-video-form');
+        const editButton = document.getElementById('edit-button');
+        const commentsList = document.getElementById('comments-list');
+        const commentInput = document.getElementById('comment-input');
+        const likeBtn = document.querySelector('.like-btn');
+        const dislikeBtn = document.querySelector('.dislike-btn');
+        const likeCount = document.getElementById('like-count');
+        const dislikeCount = document.getElementById('dislike-count');
         
-        // Текущее видео и слушатель
         let currentVideo = null;
         let videosUnsubscribe = null;
+        let adminVideosUnsubscribe = null;
+        let currentUserReaction = null;
         
-        // Auth state listener
+        // Инициализация вкладок админ-панели
+        adminTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const tabId = tab.dataset.tab;
+                
+                // Активируем вкладку
+                adminTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // Показываем соответствующий контент
+                adminTabContents.forEach(content => {
+                    content.classList.remove('active');
+                    if (content.id === `${tabId}-tab`) {
+                        content.classList.add('active');
+                    }
+                });
+                
+                // Если активирована вкладка управления, загружаем видео
+                if (tabId === 'manage') {
+                    loadAdminVideos();
+                }
+            });
+        });
+        
         auth.onAuthStateChanged(user => {
             if (user) {
-                // User is signed in
                 loginBtn.classList.add('hidden');
                 registerBtn.classList.add('hidden');
                 logoutBtn.classList.remove('hidden');
                 userEmail.textContent = user.email;
-                
                 loginForm.style.display = 'none';
                 registerForm.style.display = 'none';
                 
-                // Check if user is admin
                 if (user.email === 'alway6offline@gmail.com') {
                     adminPanel.style.display = 'block';
                 }
                 
-                // Load videos
                 loadVideos();
             } else {
-                // User is signed out
                 loginBtn.classList.remove('hidden');
                 registerBtn.classList.remove('hidden');
                 logoutBtn.classList.add('hidden');
                 userEmail.textContent = '';
-                
                 adminPanel.style.display = 'none';
                 videosContainer.innerHTML = '<div class="loading"><i class="fas fa-spinner fa-spin"></i> Загрузка...</div>';
                 
-                // Stop listening to videos
                 if (videosUnsubscribe) {
                     videosUnsubscribe();
                     videosUnsubscribe = null;
                 }
                 
-                // Show welcome message
+                if (adminVideosUnsubscribe) {
+                    adminVideosUnsubscribe();
+                    adminVideosUnsubscribe = null;
+                }
+                
                 setTimeout(() => {
                     videosContainer.innerHTML = `
                         <div style="grid-column: 1 / -1; text-align: center; padding: 50px;">
@@ -733,7 +867,6 @@
             }
         });
         
-        // Event listeners
         loginBtn.addEventListener('click', () => {
             loginForm.style.display = 'block';
             registerForm.style.display = 'none';
@@ -774,7 +907,6 @@
                 });
         });
         
-        // Функция для преобразования кодов ошибок Firebase в понятные сообщения
         function getAuthErrorMessage(errorCode) {
             const errorMessages = {
                 'auth/invalid-email': 'Неверный формат email адреса',
@@ -798,12 +930,10 @@
             const videoUrl = document.getElementById('video-url').value;
             const thumbnailUrl = document.getElementById('thumbnail-url').value;
             
-            // Disable button to prevent multiple submissions
             uploadButton.disabled = true;
             uploadButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Добавление...';
             
             try {
-                // Save video data to Firestore
                 await db.collection('videos').add({
                     title,
                     description,
@@ -811,30 +941,26 @@
                     thumbnailUrl,
                     createdAt: firebase.firestore.FieldValue.serverTimestamp(),
                     views: 0,
+                    likes: 0,
+                    dislikes: 0,
                     createdBy: auth.currentUser.uid,
                     createdByEmail: auth.currentUser.email
                 });
                 
-                // Reset form
                 uploadForm.reset();
-                
-                // Show success message
                 showTestResult('Видео успешно добавлено!', true);
             } catch (error) {
                 console.error('Error saving video data:', error);
                 showTestResult('Ошибка при добавлении видео: ' + error.message, false);
             } finally {
-                // Re-enable button
                 uploadButton.disabled = false;
                 uploadButton.innerHTML = '<i class="fas fa-upload"></i> Добавить видео';
             }
         });
         
-        // Load videos from Firestore
         function loadVideos() {
             videosContainer.innerHTML = '<div class="loading"><i class="fas fa-spinner fa-spin"></i> Загрузка видео...</div>';
             
-            // Listen for real-time updates
             videosUnsubscribe = db.collection('videos')
                 .orderBy('createdAt', 'desc')
                 .onSnapshot(snapshot => {
@@ -856,7 +982,6 @@
                 });
         }
         
-        // Create video card
         function createVideoCard(video) {
             const card = document.createElement('div');
             card.className = 'video-card';
@@ -871,9 +996,8 @@
                     </div>
                 </div>
                 <div class="video-actions">
-                    <button class="action-btn"><i class="fas fa-thumbs-up"></i></button>
-                    <button class="action-btn"><i class="fas fa-share"></i></button>
-                    <button class="action-btn"><i class="fas fa-comment"></i></button>
+                    <button class="action-btn"><i class="fas fa-thumbs-up"></i> ${video.likes || 0}</button>
+                    <button class="action-btn"><i class="fas fa-thumbs-down"></i> ${video.dislikes || 0}</button>
                 </div>
             `;
             
@@ -884,33 +1008,34 @@
             videosContainer.appendChild(card);
         }
         
-        // Format date
         function formatDate(date) {
             if (!date) return 'Дата неизвестна';
             return date.toLocaleDateString('ru-RU');
         }
         
-        // Open video modal
         function openVideoModal(video) {
             currentVideo = video;
             modalVideoTitle.textContent = video.title;
             modalVideoDescription.textContent = video.description;
             modalViews.textContent = video.views || 0;
             modalDate.textContent = formatDate(video.createdAt?.toDate());
+            likeCount.textContent = video.likes || 0;
+            dislikeCount.textContent = video.dislikes || 0;
             
-            // Clear previous video
+            // Сброс стилей кнопок реакций
+            document.querySelectorAll('.action-btn').forEach(btn => {
+                btn.classList.remove('liked', 'disliked');
+            });
+            
             videoPlayerContainer.innerHTML = '';
             
-            // Create appropriate player based on URL
             if (video.videoUrl.includes('drive.google.com')) {
-                // Google Drive iframe
                 const iframe = document.createElement('iframe');
                 iframe.src = video.videoUrl;
                 iframe.allow = 'autoplay; fullscreen';
                 iframe.allowFullscreen = true;
                 videoPlayerContainer.appendChild(iframe);
             } else {
-                // Direct video link
                 const videoElement = document.createElement('video');
                 videoElement.src = video.videoUrl;
                 videoElement.controls = true;
@@ -920,27 +1045,31 @@
             
             videoModal.style.display = 'flex';
             
-            // Increment view count
+            // Загрузка комментариев
+            loadComments(video.id);
+            
+            // Загрузка реакции пользователя
+            loadUserReaction(video.id);
+            
+            // Увеличиваем счетчик просмотров
             db.collection('videos').doc(video.id).update({
                 views: firebase.firestore.FieldValue.increment(1)
             });
         }
         
-        // Close video modal
         function closeVideoModal() {
             videoModal.style.display = 'none';
             videoPlayerContainer.innerHTML = '';
             currentVideo = null;
+            commentsList.innerHTML = '';
         }
         
-        // Validate URL
         function validateUrl(input) {
             const url = input.value;
             urlError.style.display = 'none';
             
             if (!url) return;
             
-            // Check if URL is valid
             try {
                 new URL(url);
             } catch (e) {
@@ -949,7 +1078,6 @@
                 return;
             }
             
-            // Check if it's a supported cloud storage URL
             const supportedDomains = [
                 'drive.google.com',
                 'yadi.sk',
@@ -968,7 +1096,39 @@
             }
         }
         
-        // Test video URL
+        function validateEditUrl(input) {
+            const url = input.value;
+            const editUrlError = document.getElementById('edit-url-error');
+            editUrlError.style.display = 'none';
+            
+            if (!url) return;
+            
+            try {
+                new URL(url);
+            } catch (e) {
+                editUrlError.textContent = 'Некорректный URL';
+                editUrlError.style.display = 'block';
+                return;
+            }
+            
+            const supportedDomains = [
+                'drive.google.com',
+                'yadi.sk',
+                'disk.yandex.ru',
+                'dropbox.com',
+                'dl.dropboxusercontent.com',
+                'cloud.mail.ru'
+            ];
+            
+            const urlObj = new URL(url);
+            const isSupported = supportedDomains.some(domain => urlObj.hostname.includes(domain));
+            
+            if (!isSupported) {
+                editUrlError.textContent = 'Используйте ссылку из поддерживаемого облачного хранилища';
+                editUrlError.style.display = 'block';
+            }
+        }
+        
         function testVideoUrl() {
             const testUrl = document.getElementById('test-url').value;
             testResult.style.display = 'none';
@@ -980,7 +1140,6 @@
             
             showTestResult('Проверяем URL...', true);
             
-            // Validate URL format first
             try {
                 new URL(testUrl);
             } catch (e) {
@@ -988,7 +1147,6 @@
                 return;
             }
             
-            // Check if it's a supported cloud storage
             const urlObj = new URL(testUrl);
             const supportedDomains = [
                 'drive.google.com',
@@ -1006,7 +1164,6 @@
                 return;
             }
             
-            // Create test iframe/video element
             const testElement = testUrl.includes('drive.google.com') ? 
                 document.createElement('iframe') : document.createElement('video');
                 
@@ -1025,7 +1182,6 @@
                     document.body.removeChild(testElement);
                 });
                 
-                // Timeout for video loading
                 setTimeout(() => {
                     if (document.body.contains(testElement)) {
                         showTestResult('⚠ Проверка заняла слишком много времени. Ссылка может работать', true);
@@ -1033,7 +1189,6 @@
                     }
                 }, 5000);
             } else {
-                // For iframes, we can't reliably check due to CORS, so we assume it's OK
                 setTimeout(() => {
                     showTestResult('✓ Ссылка корректна. Видео должно работать', true);
                     document.body.removeChild(testElement);
@@ -1041,86 +1196,434 @@
             }
         }
         
-        // Show test result
         function showTestResult(message, isSuccess) {
             testResult.textContent = message;
             testResult.className = `test-result ${isSuccess ? 'success' : 'error'}`;
             testResult.style.display = 'block';
         }
         
-        // Service selection
         serviceOptions.forEach(option => {
             option.addEventListener('click', () => {
                 serviceOptions.forEach(o => o.classList.remove('selected'));
                 option.classList.add('selected');
                 
-                // Show instructions for selected service
                 document.querySelectorAll('.service-instructions').forEach(el => {
                     el.classList.remove('active');
                 });
+                
                 document.getElementById(`${option.dataset.service}-instructions`).classList.add('active');
             });
         });
         
-        // Close modal handlers
         closeModal.addEventListener('click', closeVideoModal);
+        
         videoModal.addEventListener('click', e => {
             if (e.target === videoModal) {
                 closeVideoModal();
             }
         });
         
-        // Initialize Google Drive instructions
         document.getElementById('google-instructions').classList.add('active');
         
-        // Demo content if Firebase is not configured
-        if (firebaseConfig.apiKey === "AIzaSyC4mOkOjfR16V2X2s2X2X2X2X2X2X2X2X2X") {
-            document.addEventListener('DOMContentLoaded', function() {
-                // Show warning about Firebase configuration
-                const warning = document.createElement('div');
-                warning.style.cssText = 'background: #ff6b6b; color: white; padding: 15px; border-radius: 5px; margin: 20px 0; text-align: center;';
-                warning.innerHTML = '<h3>Внимание: Firebase не настроен!</h3><p>Для работы аутентификации необходимо настроить Firebase. Замените конфигурацию в коде на свою.</p>';
-                document.querySelector('.container').prepend(warning);
+        // Функции для управления видео в админ-панели
+        function loadAdminVideos() {
+            adminVideosList.innerHTML = '<div class="loading"><i class="fas fa-spinner fa-spin"></i> Загрузка видео...</div>';
+            
+            adminVideosUnsubscribe = db.collection('videos')
+                .orderBy('createdAt', 'desc')
+                .onSnapshot(snapshot => {
+                    adminVideosList.innerHTML = '';
+                    
+                    if (snapshot.empty) {
+                        adminVideosList.innerHTML = '<p style="text-align: center;">Видео пока нет.</p>';
+                        return;
+                    }
+                    
+                    snapshot.forEach(doc => {
+                        const video = doc.data();
+                        video.id = doc.id;
+                        createAdminVideoItem(video);
+                    });
+                }, error => {
+                    console.error('Error loading admin videos:', error);
+                    adminVideosList.innerHTML = '<p style="text-align: center;">Ошибка загрузки видео.</p>';
+                });
+        }
+        
+        function createAdminVideoItem(video) {
+            const item = document.createElement('div');
+            item.className = 'admin-video-item';
+            item.innerHTML = `
+                <div class="admin-video-header">
+                    <h4>${video.title}</h4>
+                    <div class="admin-video-actions">
+                        <button class="admin-action-btn edit-btn" onclick="openEditModal('${video.id}')"><i class="fas fa-edit"></i> Редактировать</button>
+                        <button class="admin-action-btn delete-btn" onclick="deleteVideo('${video.id}')"><i class="fas fa-trash"></i> Удалить</button>
+                    </div>
+                </div>
+                <p>${video.description}</p>
+                <div class="video-meta">
+                    <span><i class="fas fa-eye"></i> ${video.views || 0} просмотров</span>
+                    <span><i class="fas fa-calendar"></i> ${formatDate(video.createdAt?.toDate())}</span>
+                </div>
+            `;
+            
+            adminVideosList.appendChild(item);
+        }
+        
+        function openEditModal(videoId) {
+            db.collection('videos').doc(videoId).get()
+                .then(doc => {
+                    if (doc.exists) {
+                        const video = doc.data();
+                        
+                        document.getElementById('edit-video-id').value = videoId;
+                        document.getElementById('edit-video-title').value = video.title;
+                        document.getElementById('edit-video-description').value = video.description;
+                        document.getElementById('edit-video-url').value = video.videoUrl;
+                        document.getElementById('edit-thumbnail-url').value = video.thumbnailUrl || '';
+                        
+                        editModal.style.display = 'flex';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading video for edit:', error);
+                    alert('Ошибка загрузки данных видео');
+                });
+        }
+        
+        function closeEditModal() {
+            editModal.style.display = 'none';
+            editForm.reset();
+        }
+        
+        editForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const videoId = document.getElementById('edit-video-id').value;
+            const title = document.getElementById('edit-video-title').value;
+            const description = document.getElementById('edit-video-description').value;
+            const videoUrl = document.getElementById('edit-video-url').value;
+            const thumbnailUrl = document.getElementById('edit-thumbnail-url').value;
+            
+            editButton.disabled = true;
+            editButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Сохранение...';
+            
+            try {
+                await db.collection('videos').doc(videoId).update({
+                    title,
+                    description,
+                    videoUrl,
+                    thumbnailUrl
+                });
                 
-                // Load demo content
-                loadDemoContent();
+                closeEditModal();
+                alert('Изменения сохранены успешно!');
+            } catch (error) {
+                console.error('Error updating video:', error);
+                alert('Ошибка при сохранении изменений: ' + error.message);
+            } finally {
+                editButton.disabled = false;
+                editButton.innerHTML = '<i class="fas fa-save"></i> Сохранить изменения';
+            }
+        });
+        
+        function deleteVideo(videoId) {
+            if (confirm('Вы уверены, что хотите удалить это видео?')) {
+                db.collection('videos').doc(videoId).delete()
+                    .then(() => {
+                        alert('Видео успешно удалено!');
+                    })
+                    .catch(error => {
+                        console.error('Error deleting video:', error);
+                        alert('Ошибка при удалении видео: ' + error.message);
+                    });
+            }
+        }
+        
+        // Функции для комментариев
+        function loadComments(videoId) {
+            commentsList.innerHTML = '<div class="loading"><i class="fas fa-spinner fa-spin"></i> Загрузка комментариев...</div>';
+            
+            db.collection('comments')
+                .where('videoId', '==', videoId)
+                .orderBy('createdAt', 'desc')
+                .get()
+                .then(snapshot => {
+                    commentsList.innerHTML = '';
+                    
+                    if (snapshot.empty) {
+                        commentsList.innerHTML = '<p style="text-align: center; padding: 20px;">Комментариев пока нет.</p>';
+                        return;
+                    }
+                    
+                    snapshot.forEach(doc => {
+                        const comment = doc.data();
+                        comment.id = doc.id;
+                        createCommentElement(comment);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error loading comments:', error);
+                    commentsList.innerHTML = '<p style="text-align: center; padding: 20px;">Ошибка загрузки комментариев.</p>';
+                });
+        }
+        
+        function createCommentElement(comment) {
+            const commentElement = document.createElement('div');
+            commentElement.className = 'comment';
+            commentElement.innerHTML = `
+                <div class="comment-header">
+                    <span class="comment-author">${comment.authorEmail}</span>
+                    <span class="comment-date">${formatDate(comment.createdAt?.toDate())}</span>
+                </div>
+                <div class="comment-text">${comment.text}</div>
+            `;
+            
+            commentsList.appendChild(commentElement);
+        }
+        
+        function addComment() {
+            if (!auth.currentUser) {
+                alert('Войдите, чтобы оставлять комментарии');
+                return;
+            }
+            
+            const text = commentInput.value.trim();
+            
+            if (!text) {
+                alert('Введите текст комментария');
+                return;
+            }
+            
+            if (!currentVideo) {
+                alert('Ошибка: видео не выбрано');
+                return;
+            }
+            
+            db.collection('comments').add({
+                videoId: currentVideo.id,
+                text: text,
+                authorId: auth.currentUser.uid,
+                authorEmail: auth.currentUser.email,
+                createdAt: firebase.firestore.FieldValue.serverTimestamp()
+            })
+            .then(() => {
+                commentInput.value = '';
+                loadComments(currentVideo.id);
+            })
+            .catch(error => {
+                console.error('Error adding comment:', error);
+                alert('Ошибка при добавлении комментария: ' + error.message);
             });
         }
         
-        // Load demo content
-        function loadDemoContent() {
-            const demoVideos = [
-                {
-                    id: '1',
-                    title: 'Демо видео - Google Drive',
-                    description: 'Пример видео, загруженного через Google Drive',
-                    videoUrl: 'https://drive.google.com/file/d/1UsCRcURFHzb7xa-8Piba1S7eQzqnczqH/preview',
-                    thumbnailUrl: 'https://i.ibb.co/3pQ7y0T/landscape.jpg',
-                    createdAt: new Date(),
-                    views: 15
-                },
-                {
-                    id: '2',
-                    title: 'Демо видео - Природа',
-                    description: 'Красивые пейзажи и природа',
-                    videoUrl: 'https://drive.google.com/file/d/1ZaXoCmUI_6in-vd4I4VnZvFp8wqGNkfL/preview',
-                    thumbnailUrl: 'https://i.ibb.co/6RJQmY6/city.jpg',
-                    createdAt: new Date(Date.now() - 86400000),
-                    views: 8
-                }
-            ];
+        // Функции для лайков/дизлайков
+        function loadUserReaction(videoId) {
+            if (!auth.currentUser) return;
             
-            // Display demo videos
-            const videosContainer = document.getElementById('videos-container');
-            videosContainer.innerHTML = '';
+            db.collection('reactions')
+                .where('videoId', '==', videoId)
+                .where('userId', '==', auth.currentUser.uid)
+                .get()
+                .then(snapshot => {
+                    if (!snapshot.empty) {
+                        const reaction = snapshot.docs[0].data();
+                        currentUserReaction = reaction.type;
+                        
+                        // Подсвечиваем активную кнопку
+                        if (reaction.type === 'like') {
+                            document.querySelector('.like-btn').classList.add('liked');
+                        } else if (reaction.type === 'dislike') {
+                            document.querySelector('.dislike-btn').classList.add('disliked');
+                        }
+                    } else {
+                        currentUserReaction = null;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading user reaction:', error);
+                });
+        }
+        
+        function handleReaction(type) {
+            if (!auth.currentUser) {
+                alert('Войдите, чтобы оценивать видео');
+                return;
+            }
             
-            demoVideos.forEach(video => {
-                createVideoCard(video);
+            if (!currentVideo) {
+                alert('Ошибка: видео не выбрано');
+                return;
+            }
+            
+            // Если пользователь уже поставил такую же реакцию - убираем ее
+            if (currentUserReaction === type) {
+                removeReaction(type);
+                return;
+            }
+            
+            // Если пользователь уже поставил противоположную реакцию - меняем ее
+            if (currentUserReaction && currentUserReaction !== type) {
+                changeReaction(type);
+                return;
+            }
+            
+            // Если у пользователя нет реакции - добавляем новую
+            addReaction(type);
+        }
+        
+        function addReaction(type) {
+            const oppositeType = type === 'like' ? 'dislike' : 'like';
+            const batch = db.batch();
+            
+            // Добавляем реакцию
+            const reactionRef = db.collection('reactions').doc();
+            batch.set(reactionRef, {
+                videoId: currentVideo.id,
+                userId: auth.currentUser.uid,
+                type: type,
+                createdAt: firebase.firestore.FieldValue.serverTimestamp()
             });
             
-            // Enable demo admin panel
-            document.getElementById('admin-panel').style.display = 'block';
+            // Обновляем счетчик
+            const videoRef = db.collection('videos').doc(currentVideo.id);
+            batch.update(videoRef, {
+                [type + 's']: firebase.firestore.FieldValue.increment(1)
+            });
+            
+            batch.commit()
+                .then(() => {
+                    currentUserReaction = type;
+                    updateReactionUI();
+                    
+                    // Обновляем счетчики
+                    if (type === 'like') {
+                        likeCount.textContent = (parseInt(likeCount.textContent) + 1).toString();
+                    } else {
+                        dislikeCount.textContent = (parseInt(dislikeCount.textContent) + 1).toString();
+                    }
+                })
+                .catch(error => {
+                    console.error('Error adding reaction:', error);
+                    alert('Ошибка при добавлении реакции: ' + error.message);
+                });
         }
+        
+        function removeReaction(type) {
+            const batch = db.batch();
+            
+            // Находим и удаляем реакцию
+            db.collection('reactions')
+                .where('videoId', '==', currentVideo.id)
+                .where('userId', '==', auth.currentUser.uid)
+                .where('type', '==', type)
+                .get()
+                .then(snapshot => {
+                    if (!snapshot.empty) {
+                        const reactionDoc = snapshot.docs[0];
+                        batch.delete(reactionDoc.ref);
+                        
+                        // Обновляем счетчик
+                        const videoRef = db.collection('videos').doc(currentVideo.id);
+                        batch.update(videoRef, {
+                            [type + 's']: firebase.firestore.FieldValue.increment(-1)
+                        });
+                        
+                        batch.commit()
+                            .then(() => {
+                                currentUserReaction = null;
+                                updateReactionUI();
+                                
+                                // Обновляем счетчики
+                                if (type === 'like') {
+                                    likeCount.textContent = (parseInt(likeCount.textContent) - 1).toString();
+                                } else {
+                                    dislikeCount.textContent = (parseInt(dislikeCount.textContent) - 1).toString();
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Error removing reaction:', error);
+                                alert('Ошибка при удалении реакции: ' + error.message);
+                            });
+                    }
+                })
+                .catch(error => {
+                    console.error('Error finding reaction to remove:', error);
+                });
+        }
+        
+        function changeReaction(newType) {
+            const oldType = currentUserReaction;
+            const batch = db.batch();
+            
+            // Находим старую реакцию
+            db.collection('reactions')
+                .where('videoId', '==', currentVideo.id)
+                .where('userId', '==', auth.currentUser.uid)
+                .where('type', '==', oldType)
+                .get()
+                .then(snapshot => {
+                    if (!snapshot.empty) {
+                        const reactionDoc = snapshot.docs[0];
+                        
+                        // Обновляем тип реакции
+                        batch.update(reactionDoc.ref, {
+                            type: newType
+                        });
+                        
+                        // Обновляем счетчики
+                        const videoRef = db.collection('videos').doc(currentVideo.id);
+                        batch.update(videoRef, {
+                            [oldType + 's']: firebase.firestore.FieldValue.increment(-1),
+                            [newType + 's']: firebase.firestore.FieldValue.increment(1)
+                        });
+                        
+                        batch.commit()
+                            .then(() => {
+                                currentUserReaction = newType;
+                                updateReactionUI();
+                                
+                                // Обновляем счетчики
+                                if (oldType === 'like') {
+                                    likeCount.textContent = (parseInt(likeCount.textContent) - 1).toString();
+                                    dislikeCount.textContent = (parseInt(dislikeCount.textContent) + 1).toString();
+                                } else {
+                                    likeCount.textContent = (parseInt(likeCount.textContent) + 1).toString();
+                                    dislikeCount.textContent = (parseInt(dislikeCount.textContent) - 1).toString();
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Error changing reaction:', error);
+                                alert('Ошибка при изменении реакции: ' + error.message);
+                            });
+                    }
+                })
+                .catch(error => {
+                    console.error('Error finding reaction to change:', error);
+                });
+        }
+        
+        function updateReactionUI() {
+            // Сбрасываем все стили
+            document.querySelectorAll('.action-btn').forEach(btn => {
+                btn.classList.remove('liked', 'disliked');
+            });
+            
+            // Применяем стили к активной реакции
+            if (currentUserReaction === 'like') {
+                document.querySelector('.like-btn').classList.add('liked');
+            } else if (currentUserReaction === 'dislike') {
+                document.querySelector('.dislike-btn').classList.add('disliked');
+            }
+        }
+        
+        // Обработка отправки комментария по нажатию Enter
+        commentInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                addComment();
+            }
+        });
     </script>
 </body>
 </html>
